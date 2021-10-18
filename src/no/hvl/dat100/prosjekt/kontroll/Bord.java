@@ -158,10 +158,12 @@ public class Bord {
 	 */
 	public void snuTilBunken() {
 
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		Kort siste = bunkeTil.taSiste();
+		Kort gamle = new Kort(siste.getFarge(), siste.getVerdi());
+		KortSamling T = new KortSamling(bunkeTil);
+		bunkeFra = T;
+		bunkeTil = new KortSamling();
+		bunkeTil.leggTil(gamle);	
 	}
 		
 	/**
@@ -172,6 +174,31 @@ public class Bord {
 	 * 	
 	 */
 	public void leggNedBunkeTil(Kort k) {
+		
+		System.out.print("\n Spelar Nord Prøvar å gjere noko \n");
+		System.out.printf("Toppen er %d , Farge er %s \n", topp.getVerdi(), topp.fargeTilStreng());
+		System.out.printf("Nord Har : \n"); 
+
+		for(Kort i : hand) 
+			{
+			System.out.printf("%d , \tFarge er %s \n ", i.getVerdi(), i.fargeTilStreng());
+			}
+
+		Kort mogleg = hand.GetGyldige(topp);
+
+		if(mogleg != null) {
+			System.out.printf("Kan legge ned kort : \tFarge = %s\tVerdi=\t%d\n",mogleg.fargeTilStreng(),mogleg.getVerdi());
+			return new Handling(HandlingsType.LEGGNED, mogleg);
+		}
+
+		if(getAntallTrekk() < Regler.maksTrekk()) {
+			System.out.printf("Prøvar å trekke, Antal trekk er : %d \n", getAntallTrekk());
+			return new Handling(HandlingsType.TREKK, topp);
+		}
+		System.out.println("Må melde Pass");
+		return new Handling(HandlingsType.FORBI, topp);
+
+	}
 		
 		// TODO - START
 		

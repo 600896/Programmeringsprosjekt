@@ -1,7 +1,10 @@
 package no.hvl.dat100.prosjekt.modell;
-
+import java.lang.Iterable;
+import java.util.*;
 import no.hvl.dat100.prosjekt.TODO;
 import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
+import static java.lang.System.out;
+
 
 /**
  * Struktur for Ã¥ lagre ei samling kort. Kan lagre hele kortstokken. Det finnes
@@ -11,21 +14,26 @@ import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
  * 
  */
 public class KortSamling {
+	tab [] Kort = {1, 2, 3, 4};
+	
+	getAntalKort(Kort);
 
 	private final int MAKS_KORT = 4 * Regler.MAKS_KORT_FARGE;
 
 	private Kort[] samling;
-	private int antall;
 
+	
+	private int antall;
+	
 	/**
-	 * Oppretter en tom Kortsamling med plass til MAKS_KORT (hele kortstokken).
+	 * Oppretter en tom Kortsamling med plass 
+	 * til MAKS_KORT (hele kortstokken).
 	 */
 	public KortSamling() {
+		samling = new Kort[MAKS_KORT];
+		antall = 0;
 		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("KortSamling"));
-		// TODO - END
+	
 	}
 
 	/**
@@ -39,8 +47,14 @@ public class KortSamling {
 	 */
 	public Kort[] getSamling() {
 		
-		return samling;
+		int samling = 0;
 		
+		for (int i = 0; i < Kort.length; i++) {
+		samling = i;
+			
+		}
+		
+		return samling;
 	}
 	
 	/**
@@ -49,12 +63,14 @@ public class KortSamling {
 	 * @return antall kort i samlinga.
 	 */
 	public int getAntalKort() {
+		int antall = 0;
 		
-		// TODO - START
+		for (int i = 0; i < Kort.length; i++) {
+			antall = i;
+		}
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return antall;
 		
-		// TODO - END
 	}
 	
 	/**
@@ -64,11 +80,20 @@ public class KortSamling {
 	 */
 	public boolean erTom() {
 		
-		// TODO - START
-				
-		throw new UnsupportedOperationException(TODO.method());
+		boolean tom = true;	
+		int antal = 0;
 		
-		// TODO - END
+			for (int i = 0; i < Kort.length; i++) {
+				samling = i;
+			}
+			System.out.println(samling);
+			if (antal == 0) {
+				tom = true;
+				}
+			else {
+				tom = false;
+			}
+			return (tom);
 	}
 
 	/**
@@ -79,11 +104,20 @@ public class KortSamling {
 	 */
 	public void leggTil(Kort kort) {
 		
-		// TODO - START
+		Kort.add(kort);
 		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
-		
+//		int param = 0;
+
+//		 int nyLengde = Kort.length + param;
+//		 int [] nyTab = new int [nyLengde];
+//		 
+//		 for (int i = 0; i < Kort.length; i++) {
+//			 nyTab[i] = tab[i];
+//		 }
+//
+//		 for (int k = 1; k < nyTab.length; k++) {	
+//				nyTab[k];
+//			}
 	}
 	
 	/**
@@ -95,16 +129,20 @@ public class KortSamling {
 		// TODO - START
 		// Husk: bruk Regler.MAKS_KORT_FARGE for Ã¥ fÃ¥ antall kort per farge
 		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		  for (Kortfarge f : Kortfarge.values()) {
+	            for (int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
+	                samling[i - 1] = new Kort(f, i);
+	                antall++;
+	            }
+	        }
 	}
 
 	/**
 	 * Fjerner alle korta fra samlinga slik at den blir tom.
 	 */
 	public void fjernAlle() {
+		kort.clear();
 		
-		// TODO - START
 		
 		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
@@ -184,7 +222,12 @@ public class KortSamling {
 	 *         som i kortsamlinga.
 	 */
 	public Kort[] getAllekort() {
-		
+		String [] Spar = {"SA", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10", "SJ", "SQ", "SK"};
+		String [] Hjerter = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+		String [] Ruter = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+		String [] Kløver = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+	
+		String[] samling = {Spar, Hjerter, Ruter, Kløver};
 		// TODO - START
 		
 		throw new UnsupportedOperationException(TODO.method());

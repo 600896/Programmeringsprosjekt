@@ -9,6 +9,9 @@ public class TODO {
 		return "Metoden " + methodName + " er ikke implementert";
 	}
 	
+	//endring i koden 1
+	String Endring;
+	System.out.println(Endring);
 	
 	public static String constructor(String className) {
 				
