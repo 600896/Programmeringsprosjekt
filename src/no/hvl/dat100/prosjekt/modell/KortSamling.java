@@ -104,20 +104,7 @@ public class KortSamling {
 	 */
 	public void leggTil(Kort kort) {
 		
-		Kort.add(kort);
-		
-//		int param = 0;
 
-//		 int nyLengde = Kort.length + param;
-//		 int [] nyTab = new int [nyLengde];
-//		 
-//		 for (int i = 0; i < Kort.length; i++) {
-//			 nyTab[i] = tab[i];
-//		 }
-//
-//		 for (int k = 1; k < nyTab.length; k++) {	
-//				nyTab[k];
-//			}
 	}
 	
 	/**
